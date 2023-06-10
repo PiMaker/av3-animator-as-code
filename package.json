@@ -1,0 +1,17 @@
+{
+  "name": "hai.animatorascode.pi",
+  "displayName": "Animator as Code (pi's fork)",
+  "version": "1.0.0",
+	"unity" : "2019.4",
+  "description": "Animator As Code is a small Unity Editor facility to generate Avatars 3.0 Animator layers and animations from a fluent builder syntax written in C#.\nOriginally created by Haï~ (https://github.com/hai-vr/av3-animator-as-code), maintained as VPM by _pi_",
+  "type": "library",
+  "author": {
+    "name": "Haï~, maintained as VPM by _pi_",
+    "email": "pi+vpm@pimaker.at",
+    "url": "https://github.com/pimaker"
+  },
+  "vpmDependencies": {
+    "com.vrchat.avatars": "3.x"
+  },
+  "legacyFolders": {}
+}
