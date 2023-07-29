@@ -129,6 +129,8 @@ namespace AnimatorAsCode.Pi.V0
             var grid = defaultsProvider.Grid();
             _gridShiftX = grid.x;
             _gridShiftY = grid.y;
+
+            AacV0.UndoDisable(machine);
         }
 
         internal AacBackingAnimator BackingAnimator()
@@ -214,6 +216,8 @@ namespace AnimatorAsCode.Pi.V0
             State = state;
             _machine = machine;
             _defaultsProvider = defaultsProvider;
+
+            AacV0.UndoDisable(state);
         }
 
         public AacFlState LeftOf(AacFlState otherState) => MoveNextTo(otherState, -1, 0);
@@ -592,6 +596,8 @@ namespace AnimatorAsCode.Pi.V0
         public AacFlTransition(AnimatorStateTransition transition, AnimatorStateMachine machine, AnimatorState sourceNullableIfAny, AnimatorState destinationNullableIfExits) : base(transition, machine, sourceNullableIfAny, destinationNullableIfExits)
         {
             _transition = transition;
+
+            AacV0.UndoDisable(transition);
         }
 
         public AacFlTransition WithSourceInterruption()
@@ -679,6 +685,8 @@ namespace AnimatorAsCode.Pi.V0
         public AacFlCondition(AnimatorTransitionBase transition)
         {
             _transition = transition;
+
+            AacV0.UndoDisable(transition); // just in case?
         }
 
         public AacFlCondition Add(string parameter, AnimatorConditionMode mode, float threshold)
